@@ -70,8 +70,10 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-[#111111] container mx-auto rounded-lg text-white px-16 py-20">
-      <div >
+    <footer className=" md:mx-16 font-ppneuemontreal ">
+      <div className="rounded-lg bg-[#111111] text-white px-16 py-20">
+      
+      <div className=" container mx-auto " >
         {/* Main Footer Links */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-12">
           {Object.entries(footerLinks).map(([category, links]) => (
@@ -93,7 +95,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="border-b border-gray-400 pb-4 mb-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap">
               <span className="text-sm">Follow us</span>
               <div className="flex gap-2">
                 {socialLinks.map(({ icon, href }) => (
@@ -123,6 +125,9 @@ export default function Footer() {
             ))}
           </div>
         </div>
+      </div>
+
+
       </div>
     </footer>
   )

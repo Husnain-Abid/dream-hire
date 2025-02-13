@@ -1,7 +1,19 @@
 "use client";
 
-import { ChevronDown, ChevronUp, Search, Star } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Search,
+  Star,
+  ThumbsDown,
+  ThumbsUp,
+} from "lucide-react";
 import { useState } from "react";
+
+import usa from "../../asset/images/profile/usa.png";
+import spain from "../../asset/images/profile/spain.png";
+import repeat from "../../asset/images/profile/repeat.png";
+import project from "../../asset/images/profile/project1.png";
 
 const reviews = [
   {
@@ -11,6 +23,9 @@ const reviews = [
       initial: "A",
       country: "United States",
       isRepeatClient: true,
+      flag: usa,
+      textColor: "text-amber-800",
+      bgColor: "bg-[#FFE0D4]",
     },
     rating: 5,
     timeAgo: "1 month ago",
@@ -26,6 +41,9 @@ const reviews = [
       name: "jonhouston993",
       initial: "J",
       country: "United States",
+      flag: usa,
+      textColor: "text-amber-800",
+      bgColor: "bg-[#FFD3E2]",
     },
     rating: 4,
     timeAgo: "2 months ago",
@@ -43,7 +61,10 @@ const reviews = [
       name: "pachums",
       initial: "P",
       country: "Spain",
+      flag: spain,
       isRepeatClient: true,
+      textColor: "text-white",
+      bgColor: "bg-[#465A00]",
     },
     rating: 5,
     timeAgo: "6 days ago",
@@ -52,7 +73,54 @@ const reviews = [
     price: "PKR170,400-PKR227,200",
     duration: "3 weeks",
     projectType: "Web Application",
+    sellerResponse:
+      "Thank you for your feedback. We continuously strive to improve our services.",
   },
+  {
+    id: "4",
+    user: {
+      name: "albenboo",
+      initial: "A",
+      country: "United States",
+      isRepeatClient: true,
+      flag: usa,
+      textColor: "text-amber-800",
+      bgColor: "bg-[#FFE0D4]",
+    },
+    rating: 5,
+    timeAgo: "1 month ago",
+    content:
+      "I am absolutely thrilled with the website that was created for my business! From start to finish, the team was professional, attentive, and incredibly skilled. They really took the time to understand my needs and vision, and the result exceeded my expectations. The design is modern, user-friendly, and...",
+    price: "PKR56,800-PKR113,600",
+    duration: "2 months",
+    projectType: "WordPress",
+    sellerResponse:
+      "Thank you for your feedback. We continuously strive to improve our services.",
+  },
+  {
+    id: "5",
+    user: {
+      name: "taslimakamali",
+      initial: "A",
+      country: "United States",
+      isRepeatClient: true,
+      flag: usa,
+      textColor: "text-amber-800",
+      bgColor: "bg-[#FFE0D4]",
+    },
+    rating: 5,
+    timeAgo: "1 month ago",
+    content:
+      "I am absolutely thrilled with the website that was created for my business! From start to finish, the team was professional, attentive, and incredibly skilled. They really took the time to understand my needs and vision, and the result exceeded my expectations. The design is modern, user-friendly, and...",
+    price: "PKR56,800-PKR113,600",
+    duration: "2 months",
+    projectType: "WordPress",
+    sellerResponse:
+      "Thank you for your feedback. We continuously strive to improve our services.",
+  }
+
+
+
 ];
 
 export default function ReviewSection() {
@@ -75,7 +143,7 @@ export default function ReviewSection() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Search and Filter Section */}
-      <div className="max-w-xs mb-6 space-y-4">
+      <div className="max-w-xs mb-6 space-y-5 ">
         <div className="relative">
           <input
             type="text"
@@ -85,7 +153,7 @@ export default function ReviewSection() {
             onChange={(e) => setSearchQuery(e.target.value)}
           />
 
-          <div className="absolute right-2 top-1/2 -translate-y-1/2 bg-purple-500 p-2 ">
+          <div className="absolute right-0 top-0 h-full flex items-center bg-[#5865F2] px-3 rounded-r-[4px] border-l border-gray-300">
             <Search className="w-4 h-4 text-white" />
           </div>
         </div>
@@ -106,12 +174,12 @@ export default function ReviewSection() {
 
       {/* Reviews List */}
 
-      <div className="">
-        <div className="flex items-center justify-between mb-6">
+      <div className=" border-t  ">
+        <div className="flex items-center justify-between mb-6 pt-8">
           <span className="text-sm text-gray-600">1-5 out of 1810 Reviews</span>
           <div className="relative">
             <select
-              className="appearance-none border rounded-lg px-4 py-2 pr-8 text-sm bg-white"
+              className="appearance-none  px-4 py-2 pr-10 text-sm bg-white"
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
@@ -123,72 +191,161 @@ export default function ReviewSection() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="">
           {reviews.map((review) => (
-            <div key={review.id} className="border rounded-lg p-6 bg-white">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#FFF1F0] flex items-center justify-center text-[#F55B53] font-medium">
-                  {review.user.initial}
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-medium">{review.user.name}</span>
-                    {review.user.isRepeatClient && (
-                      <span className="text-xs text-gray-600 flex items-center gap-1">
-                        Repeat Client
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <span>{review.user.country}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 mb-3">
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-4 h-4 ${
-                        i < review.rating ? "text-yellow-400" : "text-gray-200"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm text-gray-600">{review.timeAgo}</span>
-              </div>
-
-              <p className="text-gray-700 mb-4">{review.content}</p>
-
-              <div className="mt-4 pt-4 border-t">
-                {review.sellerResponse && (
-                  <button
-                    className="flex items-center gap-2 text-sm font-medium"
-                    onClick={() => toggleResponse(review.id)}
+            <>
+              <div key={review.id} className="border rounded-lg p-6 bg-white">
+                <div className="flex items-start gap-4 mb-4 border-b pb-4">
+                  <div
+                    className={`w-11 h-11 rounded-full ${review.user.bgColor} ${review.user.textColor} flex items-center justify-center  font-medium`}
                   >
-                    Seller's Response
-                    {expandedResponses.has(review.id) ? (
-                      <ChevronUp className="w-4 h-4" />
-                    ) : (
-                      <ChevronDown className="w-4 h-4" />
+                    {review.user.initial}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-bold">
+                        {review.user.name}
+                      </span>
+                      {review.user.isRepeatClient && (
+                        <>
+                          .
+                          <span className="text-xs text-gray-600 font-bold flex items-center gap-1">
+                            <img
+                              src={repeat}
+                              alt="repeat"
+                              className="w-3 self-center "
+                            />{" "}
+                            Repeat Client
+                          </span>
+                        </>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-600">
+                      <img src={review.user.flag} alt={review.user.country} />
+                      <span>{review.user.country}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-3 h-3  ${
+                          i < review.rating
+                            ? "fill-black text-gray-900"
+                            : "text-gray-900"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-xs text-gray-600">
+                    {" "}
+                    . {review.timeAgo}
+                  </span>
+                </div>
+
+                {/* <p className="text-sm text-gray-700 mb-4">{review.content}</p> */}
+
+                {/* Content */}
+                <p className="text-sm text-gray-700 mb-4">
+                  {review.content} <br />
+                  {review.content.length > 300 && (
+                    <button className="text-black hover:underline ">
+                      See more
+                    </button>
+                  )}
+                </p>
+
+                {/* Project Details */}
+                <div className="flex items-center gap-8 mb-4 text-sm">
+                  <div>
+                    <div className="text-sm font-semibold">{review.price}</div>
+                    <div className="text-xs text-gray-500">Price</div>
+                  </div>
+
+                  {/* Border between divs */}
+                  <div className="h-6 border-l border-gray-300"></div>
+
+                  <div>
+                    <div className="text-sm font-semibold">
+                      {review.duration}
+                    </div>
+                    <div className="text-xs text-gray-500">Duration</div>
+                  </div>
+
+                  {/* Border between divs */}
+                  <div className="h-6 border-l border-gray-300"></div>
+
+                  <div className="flex items-center gap-2 border rounded-md p-2">
+                    <img
+                      src={project}
+                      alt={review.projectType}
+                      className="w-6 h-6"
+                    />
+                    <span className="text-xs text-gray-600">
+                      {review.projectType}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Seller's Response */}
+                {review.sellerResponse && (
+                  <>
+                    <div className="mt-4 pt-4 border-t flex items-center justify-between gap-2 text-sm font-medium">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-lime-100 flex items-center justify-center text-xs">
+                          H
+                        </div>
+
+                        <span className="text-xs font-bold">
+                          Seller's Response
+                        </span>
+                      </div>
+
+                      <button
+                        className=""
+                        onClick={() => toggleResponse(review.id)}
+                      >
+                        <div>
+                          {expandedResponses.has(review.id) ? (
+                            <ChevronUp className="w-4 h-4" />
+                          ) : (
+                            <ChevronDown className="w-4 h-4" />
+                          )}
+                        </div>
+                      </button>
+                    </div>
+
+                    {expandedResponses.has(review.id) && (
+                      <div>
+                        <p className="mt-2 text-sm text-gray-600 pl-8">
+                          {review.sellerResponse}
+                        </p>
+                      </div>
                     )}
-                  </button>
-                )}
-                {expandedResponses.has(review.id) && (
-                  <p className="mt-2 text-sm text-gray-600 pl-8">
-                    {review.sellerResponse}
-                  </p>
+                  </>
                 )}
               </div>
-            </div>
+              {/* Helpful Buttons */}
+              <div className="flex items-center gap-4 ml-2 mt-2  mb-6">
+                <span className="text-sm text-gray-600">Helpful?</span>
+                <button className="flex gap-2 text-xs text-gray-600 hover:text-gray-900">
+                  <ThumbsUp className="w-4 h-4" /> Yes
+                </button>
+                <button className="flex gap-2 items-center text-xs text-gray-600 hover:text-gray-900">
+                  <ThumbsDown className="w-4 h-4" /> No
+                </button>
+              </div>
+            </>
           ))}
         </div>
       </div>
 
       {/* Show More Button */}
-      <div className="mt-8 text-center">
-        <button className="px-6 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50">
+      <div className="mt-8 text-start">
+        <button className="px-6 py-2 border border-gray-900 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-50">
           Show More Reviews
         </button>
       </div>

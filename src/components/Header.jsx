@@ -7,9 +7,9 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className=" border-gray-200">
+    <header className=" border-gray-200 font-ppneuemontreal">
       {/* Top Navigation */}
-      <div className=" px-16">
+      <div className="px-4 md:px-16">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex gap-10">

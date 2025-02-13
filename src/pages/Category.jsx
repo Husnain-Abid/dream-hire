@@ -6,6 +6,7 @@ import HowItWorks from '../components/Category/HowItWorks'
 import ProgrammingCategories from '../components/Category/ProgrammingCategories'
 import CTABanner from '../components/CTABanner'
 import GuidesSection from '../components/Category/GuidesSection'
+import CategoriesSection from '../components/Category/CategoriesSection'
 
 export default function Category() {
   return (
@@ -36,6 +37,9 @@ export default function Category() {
 
       {/* ctabanner Section */}
       <CTABanner />
+
+      {/* ctabanner Section */}
+      <CategoriesSection />
 
       
     </>

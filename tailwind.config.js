@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 
 module.exports = {
@@ -18,12 +17,7 @@ module.exports = {
         customWhite: "#F4F4F2", // Add a custom name for your color
       },
       fontFamily: {
-        inter: ['"Inter"', 'sans-serif'], // Add the Inter font
-        poppins: ['"Poppins"', 'sans-serif'], // Add the Poppins font
-
-        sui: ['"Sui Generis"', ...defaultTheme.fontFamily.sans],
-
-
+        'ppneuemontreal': ['PPNeueMontreal', 'sans-serif'],
       },
     },
 

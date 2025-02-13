@@ -9,7 +9,7 @@ export default function Layout() {
       <Header />
 
       {/* Main Content Area with Scrollable Section */}
-      <div className="">
+      <div className="font-ppneuemontreal">
         <Outlet />
       </div>
 

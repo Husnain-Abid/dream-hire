@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { BadgeCheck, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 export default function FreelancerProfile() {
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-8">
+    <div className="container  mx-auto px-4 py-10 space-y-8">
       {/* Expert Section */}
-      <div className="space-y-2">
-        <h2 className="text-sm font-medium text-gray-700">Expert in:</h2>
+      <div className="space-y-2 max-w-2xl">
+        <h2 className="text-sm font-bold text-gray-700">Expert in:</h2>
         <div className="flex items-center gap-2">
-          <span className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-            <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2L1 21h22L12 2zm0 3.516L20.297 19H3.703L12 5.516z" />
-            </svg>
+          <span className="inline-flex items-center gap-2 py-1 rounded-full text-sm">
+            <BadgeCheck className="w-4 h-4 fill-[#2E25AD] text-white" />
             Search Engine Optimization (SEO)
           </span>
         </div>
       </div>
 
       {/* Reviews Section */}
-      <div className="space-y-4">
+      <div className="space-y-4 max-w-2xl">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-semibold">What people loved about this freelancer</h2>
-          <a href="#" className="text-sm text-blue-600 hover:underline">
+          <h2 className="text-xl font-semibold">
+            What people loved about this freelancer
+          </h2>
+          <a href="#" className="text-sm font-semibold hover:underline">
             See all reviews
           </a>
         </div>
@@ -43,7 +43,9 @@ export default function FreelancerProfile() {
                         alt="United States"
                         className="w-4 h-4"
                       />
-                      <span className="text-sm text-gray-500">United States</span>
+                      <span className="text-sm text-gray-500">
+                        United States
+                      </span>
                     </div>
                     <div className="flex items-center gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
@@ -51,11 +53,16 @@ export default function FreelancerProfile() {
                       ))}
                     </div>
                     <p className="text-gray-600 text-sm">
-                      Easily the best link-building package on Fiverr. This is the second time I've ordered from Jacob
-                      because a month or two ago I ordered 20 different packages...
-                      <button className="text-blue-600 hover:underline ml-1">See more</button>
+                      Easily the best link-building package on Fiverr. This is
+                      the second time I've ordered from Jacob because a month or
+                      two ago I ordered 20 different packages...
+                      <button className="text-blue-600 hover:underline ml-1">
+                        See more
+                      </button>
                     </p>
-                    <span className="block mt-2 text-xs text-gray-500">2 years ago</span>
+                    <span className="block mt-2 text-xs text-gray-500">
+                      2 years ago
+                    </span>
                   </div>
                 </div>
               </div>
@@ -71,44 +78,63 @@ export default function FreelancerProfile() {
       </div>
 
       {/* About Section */}
-      <div className="space-y-4">
+      <div className="space-y-4 max-w-2xl">
         <div className="flex items-center gap-2">
           <h2 className="text-xl font-semibold">About this Gig</h2>
-          <span className="px-2 py-1 bg-blue-600 text-white text-xs rounded-full">Pro</span>
+
+          <span className="ml-4 px-2 p-1 flex items-center gap-2 bg-[#5865F2] text-white text-xs rounded-md">
+            <BadgeCheck className="w-3 h-3 text-[#5865F2] fill-white rounded-full " />
+            Pro
+          </span>
         </div>
-        <p className="text-gray-600">
-          One of The Most Trusted SEO Professionals on Fiverr With 15 Years Of Experience In SEO
+        <p className="text-gray-900 text-sm font-bold">
+          One of The Most Trusted SEO Professionals on Fiverr With 15 Years Of
+          Experience In SEO
         </p>
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-sm">
-            <span className="font-medium">Reviews:</span>
-            <a href="https://tinyurl.com/jacob2reviews" className="text-blue-600 hover:underline">
+            <span className="font-bold">Reviews:</span>
+            <a
+              href="https://tinyurl.com/jacob2reviews"
+              className="text-gray-950 font-normal hover:underline"
+            >
               https://tinyurl.com/jacob2reviews
             </a>
           </div>
-          <button className="text-blue-600 hover:underline text-sm">Read More</button>
+          <button className="text-gray-950 font-bold hover:underline text-sm">
+            Read More
+          </button>
         </div>
       </div>
 
       {/* Industry Expertise */}
-      <div className="space-y-4">
-        <h2 className="text-sm font-medium text-gray-700">Industry expertise:</h2>
-        <div className="flex flex-wrap gap-2">
+      <div className="space-y-2">
+
+      <div className=" flex items-center gap-6 max-w-2xl">
+        <h2 className="text-sm font-medium text-gray-700">
+          Industry expertise:
+        </h2>
+        <div className="flex  flex-wrap gap-4">
           {["Agriculture", "Animals & pets", "Art & design"].map((industry) => (
-            <span key={industry} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+            <span
+              key={industry}
+              className="  text-gray-700 rounded-full text-sm"
+            >
               {industry}
             </span>
           ))}
-          <button className="px-3 py-1 text-blue-600 text-sm hover:underline">+33 more</button>
+          <button className="  text-sm hover:underline">+33 more</button>
         </div>
       </div>
 
       {/* Language */}
-      <div className="space-y-2">
-        <h2 className="text-sm font-medium text-gray-700">Language:</h2>
-        <span className="text-gray-600">English</span>
+      <div className="flex gap-8 ">
+        <h2 className="text-sm font-bold text-gray-700">Language:</h2>
+        <span className="text-sm text-gray-600">English</span>
       </div>
-    </div>
-  )
-}
 
+      </div>
+
+    </div>
+  );
+}

@@ -7,6 +7,7 @@ import Search from './pages/Search';
 import Seller from './pages/Seller';
 import Profile from './pages/Profile';
 import Gig from './pages/Gig';
+import Pricing from './pages/Pricing';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path='/search' element={<Search />} />
           <Route path='/seller' element={<Seller />} />
           <Route path='/profile' element={<Profile />} />
-          {/* <Route path='/gig' element={<Gig />} /> */}
+          <Route path='/gig' element={<Gig />} />
+          <Route path='/pricing' element={<Pricing />} />
         </Route>
       </Routes>
 

@@ -32,7 +32,7 @@ export default function CategoryHero() {
             <input
               type="text"
               placeholder="Search for any service..."
-              className="w-full rounded-lg py-2 pl-6 pr-12 text-lg shadow-lg  outline-none"
+              className="w-full rounded-lg py-2 pl-6 pr-12  shadow-lg  outline-none"
             />
             <button
               className="absolute right-2 top-1/2 -translate-y-1/2 rounded-lg bg-[#1D2939] p-2 text-white transition-colors hover:bg-[#2C3E50]"

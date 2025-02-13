@@ -26,7 +26,7 @@ export default function HomeBanner() {
         right: [
           home2,
           home1,
-          home2
+          home2,
         ],
       }
       
