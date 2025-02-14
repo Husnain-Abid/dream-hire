@@ -5,7 +5,7 @@ export default function Banner() {
   return (
     <>
       {/* CTA Banner */}
-      <section className="container mx-auto rounded-2xl px-4  text-gray-900 my-10"
+      <section className="container mx-auto rounded-2xl px-4  text-gray-900 my-10 hidden md:block  "
       style={{
         background: 'linear-gradient(92.85deg, #D9DDE6 0.15%, #A5BEFF 99.85%)'
       }}

@@ -6,9 +6,9 @@ import ExpertGuidance from "../components/Search/ExpertGuidance";
 import TestimonialsAndFaqs from "../components/Search/TestimonialsAndFaqs";
 import WhyUpgrade from "../components/Search/WhyUpgrade";
 import SearchHero from "../components/Search/SearchHero";
-import CTABanner from "../components/CTABanner";
 import Banner from "../components/Search/Banner";
 import BannerImage from "../components/Search/BannerImage";
+import CTABanner from "../components/Search/CTABanner";
 
 export default function Search() {
   return (
@@ -23,8 +23,7 @@ export default function Search() {
 
       <WhyUpgrade />
 
-<Banner/>
-
+      <Banner />
 
       <BusinessRewards />
 
@@ -35,7 +34,6 @@ export default function Search() {
       <TestimonialsAndFaqs />
 
       <CTABanner />
-
     </>
   );
 }

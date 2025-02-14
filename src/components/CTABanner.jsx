@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -12,7 +15,8 @@ export default function CTABanner() {
       >
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-8 text-5xl font-medium md:text-5xl">
-          Hire best-in-class freelance talent
+            Freelance services at your{" "}
+            <span className="italic">fingertips</span>
           </h2>
           <Link
             href="/join"
@@ -25,3 +29,10 @@ export default function CTABanner() {
     </>
   );
 }
+
+
+
+
+
+
+
