@@ -1,0 +1,130 @@
+/* src/index.css or src/tailwind.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+/* Font Face Definitions */
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../src/asset/fonts/PPNeueMontreal-Thin.otf') format('opentype');
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../src/asset/fonts/PPNeueMontreal-Book.otf') format('opentype');
+  font-weight: 400; /* Book */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../src/asset/fonts/PPNeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../src/asset/fonts/PPNeueMontreal-SemiBolditalic.otf') format('opentype');
+  font-weight: 600; /* SemiBold */
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../src/asset/fonts/PPNeueMontreal-Bold.otf') format('opentype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../src/asset/fonts/PPNeueMontreal-Italic.otf') format('opentype');
+  font-weight: 400; /* Book Italic */
+  font-style: italic;
+}
+
+
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+
+
+/* Global Styles - CSS File or Inline Styles */
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+/* Apply the animation */
+.animate-slide-up {
+  animation: slide-up 10s linear infinite;
+}
+
+.animate-slide-down {
+  animation: slide-down 10s linear infinite;
+}
+
+
+/* Add these to your global or component-specific CSS */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease-in-out; /* smooth transition */
+}
+
+.input-wrapper input {
+  width: 3ch; /* Adjust to the width of the alphabet (e.g., "se") */
+  transition: width 0.3s ease-in-out; /* Animation to expand width */
+  padding-left: 2.5rem; /* To make space for the icon */
+}
+
+.input-wrapper input.focused {
+  width: 12rem; /* Final width after focus */
+}
+
+.input-wrapper .icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #80CFD7;
+  pointer-events: none;
+}
+
+.input-wrapper .border-line {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 2px; /* Vertical line between icon and input */
+  background-color: #80CFD7;
+}
+
+
+
